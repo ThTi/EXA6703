@@ -84,6 +84,10 @@ public class KindergartenApp {
 		Specification<Child> spec_schoolchildren = new SchoolChildrenSpecification(); 
 		System.out.println("\nSchool Children");
 		printSpecified(children, spec_schoolchildren);
+		
+		Specification<Child> spec_black_toy = new ChildLikesSpecifiedToySpecification(new ToyColorSpecification("Black"));
+		System.out.println("\nChildren who likes some black toys");
+		printSpecified(children, spec_black_toy);
 	}
 	
 	static <T> void printSpecified(Set<T> set, Specification<T> spec) {
